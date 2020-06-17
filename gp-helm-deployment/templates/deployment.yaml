@@ -26,17 +26,5 @@ spec:
           limits:
             cpu: {{ .Values.limits_cpu }}
             memory: {{ .Values.limits_memory }}
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.configmap_env }}
-        volumeMounts:
-        - name: {{ .Values.volume_name }}
-          mountPath: /local
         ports:
         - containerPort: {{ .Values.containerport }}
-      volumes:
-        - name: {{ .Values.volume_name }}
-          configMap:
-        # Provide the name of the ConfigMap containing the files you want
-        # to add to the container
-            name: {{ .Values.service }}-{{ .Values.config_version }}
