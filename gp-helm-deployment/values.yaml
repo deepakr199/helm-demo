@@ -1,0 +1,21 @@
+# Default values for mycharts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+version: latest
+replica_count: 2
+config_version: v1
+config_dir: config
+configmap_env: env-vars
+volume_name: config-volume
+service: nginx
+image: nginx:latest
+minReplicas: 1
+maxReplicas: 1
+targetCPUUtilizationPercentage: 80
+exposedport: 8080
+containerport: 8080
+requests_cpu: 1000m
+requests_memory: 1024Mi
+limits_memory: 3584Mi
+limits_cpu: 2000m
